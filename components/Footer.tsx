@@ -150,10 +150,7 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--footer-text-muted)] mb-5">
               Contact
             </h3>
-            <address className="not-italic space-y-2.5 text-sm text-[var(--footer-text-muted)]">
-              <p className="font-medium text-[var(--footer-text)]">BMI Technologies</p>
-              <p>1446 Baulmes, VD</p>
-              <p>Baulmes, Vaud — Suisse</p>
+            <address className="not-italic text-sm text-[var(--footer-text-muted)]">
               <a
                 href="mailto:contact@bmi-tech.ch"
                 className="block transition-colors hover:text-[var(--footer-text)]"
@@ -162,21 +159,6 @@ export default function Footer() {
                 contact@bmi-tech.ch
               </a>
             </address>
-
-            {/* Badge suisse */}
-            <div
-              className="mt-6 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold"
-              style={{
-                background: "var(--footer-surface)",
-                border: "1px solid var(--footer-surface-border)",
-                color: "var(--footer-link)",
-              }}
-            >
-              <svg viewBox="0 0 20 20" fill="currentColor" width={14} height={14} aria-hidden>
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-              Baulmes, Vaud — Suisse
-            </div>
           </div>
         </div>
 
