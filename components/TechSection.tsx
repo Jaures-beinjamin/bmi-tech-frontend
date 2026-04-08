@@ -88,11 +88,12 @@ export default function TechSection() {
           {features.map((f, i) => (
             <div
               key={f.title}
-              className={`reveal ${delays[i]} group relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 cursor-default`}
+              className={`reveal ${delays[i]} group relative p-7 transition-all duration-300 hover:-translate-y-2 cursor-default`}
               style={{
                 background: "var(--surface-0)",
                 border: "1px solid var(--border-subtle)",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                borderRadius: "var(--radius-xl)",
+                boxShadow: "var(--shadow-sm)",
               }}
             >
               {/* Hover glow */}
@@ -103,8 +104,8 @@ export default function TechSection() {
 
               {/* Icône */}
               <div
-                className="relative flex h-14 w-14 items-center justify-center rounded-2xl mb-5 transition-transform duration-300 group-hover:scale-110"
-                style={{ background: f.bg }}
+                className="relative flex h-16 w-16 items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                style={{ background: f.bg, borderRadius: "var(--radius-md)" }}
               >
                 <f.Icon fontSize={26} style={{ color: f.color }} />
               </div>

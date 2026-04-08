@@ -11,7 +11,7 @@ interface FormState {
 }
 
 const inputBase =
-  "w-full rounded-xl px-4 py-3 text-sm outline-none transition-all duration-200 border bg-[var(--surface-1)] text-[var(--foreground)] placeholder:text-[var(--secondary)] border-[var(--border-default)] focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)] focus:ring-opacity-20";
+  "w-full rounded-[1.35rem] px-5 py-3.5 text-[15px] outline-none transition-all duration-200 border bg-[var(--surface-0)] text-[var(--foreground)] placeholder:text-[var(--secondary)] border-[var(--border-default)] shadow-[var(--shadow-sm)] focus:border-[var(--brand-blue)] focus:ring-2 focus:ring-[var(--brand-blue)] focus:ring-opacity-20";
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>({ nom: "", email: "", sujet: "", message: "" });
@@ -41,13 +41,18 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div
-        className="rounded-2xl p-8 text-center"
-        style={{ background: "var(--brand-green-light)", border: "1px solid var(--brand-green)" }}
+        className="p-8 text-center"
+        style={{
+          background: "var(--brand-green-light)",
+          border: "1px solid var(--brand-green)",
+          borderRadius: "var(--radius-xl)",
+          boxShadow: "var(--shadow-sm)",
+        }}
       >
         <div className="text-4xl mb-3">✅</div>
         <h3 className="font-bold text-[var(--foreground)] mb-1">Message envoyé !</h3>
         <p className="text-sm text-[var(--secondary)]">
-          Merci, Roland vous répondra sous 24 h ouvrées.
+          Merci, notre équipe vous répondra sous 24 h ouvrées.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -62,11 +67,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-
       {status === "error" && (
         <div
-          className="rounded-xl px-4 py-3 text-sm"
-          style={{ background: "var(--brand-red-light)", color: "var(--brand-red)", border: "1px solid var(--brand-red)" }}
+          className="px-4 py-3 text-sm"
+          style={{
+            background: "var(--brand-red-light)",
+            color: "var(--brand-red)",
+            border: "1px solid var(--brand-red)",
+            borderRadius: "var(--radius-lg)",
+          }}
         >
           Une erreur s&apos;est produite. Réessayez ou écrivez directement à{" "}
           <a href="mailto:contact@bmi-tech.ch" className="font-semibold underline">
@@ -78,7 +87,7 @@ export default function ContactForm() {
       {/* Nom + Email */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-xs font-semibold text-[var(--foreground)] mb-1.5 uppercase tracking-wide">
+          <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--foreground)]">
             Nom complet <span style={{ color: "var(--brand-red)" }}>*</span>
           </label>
           <input
@@ -138,8 +147,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:opacity-90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
-        style={{ background: "var(--brand-blue)" }}
+        className="flex w-full items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        style={{
+          background: "var(--brand-blue)",
+          borderRadius: "var(--radius-pill)",
+          boxShadow: "var(--shadow-primary)",
+        }}
       >
         {status === "loading" ? (
           <>

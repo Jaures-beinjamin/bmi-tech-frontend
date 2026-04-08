@@ -28,19 +28,20 @@ export default function ProjectCard({
   return (
     <Link href={href} className="block group h-full">
       <div
-        className="flex flex-col h-full rounded-2xl overflow-hidden transition-all duration-300 group-hover:-translate-y-2"
+        className="flex flex-col h-full overflow-hidden transition-all duration-300 group-hover:-translate-y-2"
         style={{
           background: "var(--surface-0)",
           border: "1px solid var(--border-subtle)",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+          borderRadius: "var(--radius-xl)",
+          boxShadow: "var(--shadow-sm)",
         }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLElement).style.boxShadow =
-            "0 24px 48px rgba(192,0,26,0.13), 0 4px 16px rgba(0,0,0,0.08)";
+            "0 22px 46px rgba(192,0,26,0.12), 0 8px 18px rgba(0,0,0,0.08)";
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLElement).style.boxShadow =
-            "0 2px 8px rgba(0,0,0,0.05)";
+            "var(--shadow-sm)";
         }}
       >
         {/* Visuel */}
@@ -75,7 +76,7 @@ export default function ProjectCard({
         </div>
 
         {/* Contenu */}
-        <div className="flex flex-col flex-1 p-6">
+        <div className="flex flex-col flex-1 p-7">
           <h3 className="font-bold text-base text-[var(--foreground)] mb-3 leading-snug">
             {title}
           </h3>
@@ -89,7 +90,7 @@ export default function ProjectCard({
             {badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full px-3 py-1 text-xs font-semibold"
+                className="rounded-full px-3.5 py-1.5 text-xs font-semibold"
                 style={{
                   background: "var(--brand-blue-light)",
                   color: "var(--brand-blue)",

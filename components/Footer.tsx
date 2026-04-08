@@ -76,10 +76,10 @@ export default function Footer() {
               <Image
                 src="/img/logo-bmi.png"
                 alt="BMI Technologies"
-                width={220}
-                height={64}
-                className="h-14 w-auto object-contain"
-                style={{ width: "auto", height: "3.5rem" }}
+                width={300}
+                height={92}
+                className="h-16 w-auto object-contain md:h-[4.5rem]"
+                style={{ width: "auto", height: "4.5rem" }}
               />
             </Link>
             <p className="text-sm text-[var(--footer-text-muted)] leading-relaxed mb-4">

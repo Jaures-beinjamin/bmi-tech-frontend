@@ -53,7 +53,7 @@ export default function HeroBanner() {
               </span>
             </div>
 
-            <h1 className="animate-fade-up delay-100 text-5xl font-extrabold leading-[1.05] tracking-tight lg:text-6xl xl:text-7xl mb-6" style={{ color: "var(--brand-section-text)" }}>
+            <h1 className="animate-fade-up delay-100 text-5xl font-extrabold leading-[1.02] tracking-[-0.055em] lg:text-6xl xl:text-7xl mb-6" style={{ color: "var(--brand-section-text)" }}>
               Logiciel.
               <br />
               <span
@@ -80,22 +80,24 @@ export default function HeroBanner() {
             <div className="animate-fade-up delay-300 flex flex-wrap gap-4 mb-14">
               <Link
                 href="/a-propos"
-                className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   background: "linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark))",
-                  boxShadow: "0 8px 24px rgba(192,0,26,0.32)",
+                  boxShadow: "var(--shadow-primary)",
+                  borderRadius: "var(--radius-pill)",
                 }}
               >
                 Découvrir l&apos;entreprise
               </Link>
               <Link
                 href="/projets/turc"
-                className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-medium transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   background: "var(--brand-section-ghost-bg)",
                   color: "var(--brand-section-ghost-color)",
                   border: "1px solid var(--brand-section-ghost-border)",
                   backdropFilter: "blur(8px)",
+                  borderRadius: "var(--radius-pill)",
                 }}
               >
                 <ChessRegular fontSize={18} />
@@ -120,10 +122,12 @@ export default function HeroBanner() {
               ].map((s, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl px-5 py-4"
+                  className="px-6 py-5"
                   style={{
                     background: "var(--brand-section-ghost-bg)",
                     border: "1px solid var(--brand-section-ghost-border)",
+                    borderRadius: "var(--radius-lg)",
+                    boxShadow: "var(--shadow-sm)",
                   }}
                 >
                   <div className="text-sm font-bold mb-1" style={{ color: "var(--brand-section-text)" }}>
@@ -143,7 +147,7 @@ export default function HeroBanner() {
             {/* Collage 3 photos flottant */}
             <div
               className="animate-float relative flex gap-3"
-              style={{ width: 340 }}
+              style={{ width: 372 }}
             >
               {/* Photo principale – colonne gauche */}
               <div
@@ -152,7 +156,8 @@ export default function HeroBanner() {
                   flex: 3,
                   height: 300,
                   border: "2px solid rgba(192,0,26,0.65)",
-                  boxShadow: "0 20px 60px rgba(192,0,26,0.30), 0 8px 24px rgba(0,0,0,0.50)",
+                  borderRadius: "var(--radius-xl)",
+                  boxShadow: "0 22px 52px rgba(192,0,26,0.22), 0 8px 24px rgba(0,0,0,0.18)",
                 }}
               >
                 <Image
@@ -172,7 +177,8 @@ export default function HeroBanner() {
                   style={{
                     height: 142,
                     border: "1px solid rgba(255,255,255,0.12)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                    borderRadius: "var(--radius-lg)",
+                    boxShadow: "var(--shadow-md)",
                   }}
                 >
                   <Image
@@ -188,7 +194,8 @@ export default function HeroBanner() {
                   style={{
                     height: 142,
                     border: "1px solid rgba(255,255,255,0.12)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+                    borderRadius: "var(--radius-lg)",
+                    boxShadow: "var(--shadow-md)",
                   }}
                 >
                   <Image
@@ -208,6 +215,8 @@ export default function HeroBanner() {
                   background: "var(--brand-section-ghost-bg)",
                   backdropFilter: "blur(12px)",
                   border: "1px solid var(--brand-section-ghost-border)",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 <div className="text-xs font-bold" style={{ color: "var(--brand-section-text)" }}>Projet vitrine</div>
@@ -221,6 +230,8 @@ export default function HeroBanner() {
                   background: "var(--brand-section-ghost-bg)",
                   backdropFilter: "blur(12px)",
                   border: "1px solid var(--brand-section-badge-border)",
+                  borderRadius: "var(--radius-lg)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 <div className="text-xs font-bold" style={{ color: "var(--brand-section-text)" }}>Entreprise suisse</div>

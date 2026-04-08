@@ -44,7 +44,7 @@ export default function ContactCTA() {
           </div>
         </div>
 
-        <h2 className="reveal delay-100 text-4xl font-extrabold mb-5 lg:text-5xl" style={{ color: "var(--brand-section-text)" }}>
+        <h2 className="reveal delay-100 text-4xl font-extrabold tracking-[-0.045em] mb-5 lg:text-5xl" style={{ color: "var(--brand-section-text)" }}>
           Parlons de votre projet
         </h2>
 
@@ -62,11 +62,13 @@ export default function ContactCTA() {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex items-center justify-center rounded-xl px-4 py-3 text-center"
+              className="flex items-center justify-center px-5 py-4 text-center"
               style={{
                 background: "var(--brand-section-ghost-bg)",
                 border: "1px solid var(--brand-section-ghost-border)",
                 backdropFilter: "blur(8px)",
+                borderRadius: "var(--radius-lg)",
+                boxShadow: "var(--shadow-sm)",
               }}
             >
               <span className="text-sm font-semibold" style={{ color: "var(--brand-section-text)" }}>{item.label}</span>
@@ -77,10 +79,11 @@ export default function ContactCTA() {
         <div className="reveal delay-400 flex flex-wrap justify-center gap-4">
           <a
             href="mailto:contact@bmi-tech.ch"
-            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-base font-bold text-white transition-all duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark))",
-              boxShadow: "0 8px 24px rgba(192,0,26,0.32)",
+              boxShadow: "var(--shadow-primary)",
+              borderRadius: "var(--radius-pill)",
             }}
           >
             <MailRegular fontSize={20} />
@@ -88,11 +91,12 @@ export default function ContactCTA() {
           </a>
           <Link
             href="/projets/turc"
-            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-base font-semibold transition-all duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-medium transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: "var(--brand-section-ghost-bg)",
               color: "var(--brand-section-ghost-color)",
               border: "1px solid var(--brand-section-ghost-border)",
+              borderRadius: "var(--radius-pill)",
             }}
           >
             Découvrir Le Turc <ArrowRightRegular fontSize={18} />

@@ -54,11 +54,13 @@ export default function AboutSection() {
               </p>
               <a
                 href="/a-propos"
-                className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:gap-4"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium transition-all duration-200 hover:gap-4"
                 style={{
                   color: "var(--brand-blue)",
                   background: "var(--brand-blue-light)",
                   border: "1px solid var(--brand-blue)",
+                  borderRadius: "var(--radius-pill)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 En savoir plus sur l&apos;entreprise →
@@ -71,10 +73,12 @@ export default function AboutSection() {
             {cards.map((item, i) => (
               <div
                 key={item.title}
-                className={`reveal ${i === 0 ? "delay-100" : i === 1 ? "delay-200" : i === 2 ? "delay-300" : "delay-400"} group relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default`}
+                className={`reveal ${i === 0 ? "delay-100" : i === 1 ? "delay-200" : i === 2 ? "delay-300" : "delay-400"} group relative p-7 transition-all duration-300 hover:-translate-y-1 cursor-default`}
                 style={{
                   background: "var(--surface-1)",
                   border: "1px solid var(--border-subtle)",
+                  borderRadius: "var(--radius-xl)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 {/* Hover highlight */}
