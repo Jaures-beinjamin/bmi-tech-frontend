@@ -3,10 +3,10 @@
 import { useReveal } from "@/hooks/useReveal";
 
 const cards = [
-  { emoji: "♟️", title: "Passion", text: "Échecs & électronique réunis" },
-  { emoji: "🇨🇭", title: "Suisse", text: "Baulmes, VD 1446" },
-  { emoji: "🤖", title: "Robotique", text: "Bras autonome de précision" },
-  { emoji: "💻", title: "Logiciel", text: "IA, vision & API temps réel" },
+  { emoji: "🧠", title: "Solutions sur mesure", text: "Logiciel, automatisation et outils adaptés" },
+  { emoji: "⚙️", title: "Développement matériel", text: "Prototypes, électronique et embarqué" },
+  { emoji: "🇨🇭", title: "Ancrage suisse", text: "Baulmes, Vaud — Suisse" },
+  { emoji: "♟️", title: "Projet vitrine", text: "Le Turc démontre notre savoir-faire" },
 ];
 
 export default function AboutSection() {
@@ -42,16 +42,15 @@ export default function AboutSection() {
                 BMI Technologies
               </h2>
               <p className="text-lg text-[var(--secondary)] leading-relaxed mb-4">
-                Fondée par <strong className="text-[var(--foreground)]">Roland Burgermeister</strong> à
-                Baulmes (VD), BMI Technologies est une{" "}
-                <strong className="text-[var(--foreground)]">raison individuelle suisse</strong> spécialisée
-                en robotique et informatique appliquée.
+                BMI Technologies est une <strong className="text-[var(--foreground)]">entreprise suisse de services informatiques</strong>
+                spécialisée dans le développement de logiciels, de matériel et de
+                solutions intelligentes personnalisées.
               </p>
               <p className="text-lg text-[var(--secondary)] leading-relaxed mb-8">
-                Passionné autant par les échecs que par l&apos;électronique, Roland a
-                conçu un{" "}
-                <strong className="text-[var(--foreground)]">automate joueur d&apos;échecs</strong>{" "}
-                qui repousse les frontières de la mécatronique et de l&apos;IA.
+                Basée à Baulmes, dans le canton de Vaud, elle intervient comme
+                entité indépendante, sans lien avec BMI Group ni avec d&apos;autres
+                groupes internationaux de nom similaire. Le Turc en est le projet
+                vitrine.
               </p>
               <a
                 href="/a-propos"
@@ -62,7 +61,7 @@ export default function AboutSection() {
                   border: "1px solid var(--brand-blue)",
                 }}
               >
-                En savoir plus sur nous →
+                En savoir plus sur l&apos;entreprise →
               </a>
             </div>
           </div>

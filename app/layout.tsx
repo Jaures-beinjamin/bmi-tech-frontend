@@ -14,12 +14,12 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "BMI Technologies – Robotique & Informatique · Baulmes, Suisse",
+    default: "BMI Technologies – Services informatiques · Baulmes, Suisse",
     template: "%s · BMI Technologies",
   },
   description:
-    "BMI Technologies Roland Burgermeister, startup suisse spécialisée en robotique et informatique appliquée. Découvrez notre robot joueur d'échecs inspiré du Turc mécanique.",
-  keywords: ["robotique", "échecs", "automate", "Baulmes", "Suisse", "startup"],
+    "BMI Technologies est une entreprise suisse de services informatiques spécialisée dans le développement logiciel, le matériel intelligent et les solutions sur mesure. Le Turc en est le projet vitrine.",
+  keywords: ["services informatiques", "développement logiciel", "développement matériel", "solutions intelligentes", "Baulmes", "Suisse", "Le Turc"],
 };
 
 export default function RootLayout({

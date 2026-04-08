@@ -1,12 +1,13 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Tailwind v4 : dark mode basé sur la classe .dark sur <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ──────────────────────────────────────────────
-   Variables de thème BMI Technologies
-   Palette : Bleu Google #1A73E8 + Rouge #EA4335
-   Fond clair professionnel
+  Variables de thème BMI Technologies
+  Rouge suisse profond + bleu marine
+  Fond clair professionnel
 ─────────────────────────────────────────────── */
 :root {
   --background:   #F8F8FA;
@@ -47,13 +48,17 @@
   --shadow-primary: 0 8px 32px rgba(192,0,26,0.24);
   --shadow-accent:  0 8px 32px rgba(26,58,143,0.18);
 
-  /* Footer — toujours sombre */
-  --footer-bg:         #18181B;
-  --footer-text:       #F4F4F5;
-  --footer-text-muted: rgba(255,255,255,0.60);
-  --footer-text-dim:   rgba(255,255,255,0.35);
-  --footer-border:     rgba(255,255,255,0.08);
-  --footer-link:       #FCA5A5;
+  /* Footer */
+  --footer-bg:         #FAFAFB;
+  --footer-text:       #18181B;
+  --footer-text-muted: #52525B;
+  --footer-text-dim:   rgba(24,24,27,0.56);
+  --footer-border:     rgba(0,0,0,0.08);
+  --footer-link:       #920014;
+  --footer-surface:    rgba(192,0,26,0.06);
+  --footer-surface-hover: rgba(192,0,26,0.12);
+  --footer-surface-border: rgba(192,0,26,0.14);
+  --footer-surface-border-hover: rgba(192,0,26,0.28);
 
   /* Sections brand hero/CTA — réactives au thème */
   --brand-section-bg: linear-gradient(135deg, #FAF0F2 0%, #FFFFFF 50%, #EEF2FA 100%);
@@ -120,6 +125,10 @@ html.dark {
   --footer-text-dim:   rgba(255,255,255,0.30);
   --footer-border:     rgba(255,255,255,0.08);
   --footer-link:       #FCA5A5;
+  --footer-surface:    rgba(255,255,255,0.06);
+  --footer-surface-hover: rgba(192,0,26,0.15);
+  --footer-surface-border: rgba(255,255,255,0.10);
+  --footer-surface-border-hover: rgba(192,0,26,0.60);
 }
 
 /* Tailwind v4 inline theme tokens */
@@ -140,6 +149,25 @@ html.dark {
   --font-mono: var(--font-geist-mono);
 }
 
+.brand-prose {
+  --tw-prose-body: var(--secondary);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--secondary);
+  --tw-prose-links: var(--brand-blue);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--brand-red);
+  --tw-prose-bullets: color-mix(in srgb, var(--brand-blue) 55%, transparent);
+  --tw-prose-hr: var(--border-subtle);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: color-mix(in srgb, var(--brand-red) 35%, transparent);
+  --tw-prose-captions: var(--secondary);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: #F4F4F5;
+  --tw-prose-pre-bg: #18181B;
+  --tw-prose-th-borders: var(--border-default);
+  --tw-prose-td-borders: var(--border-subtle);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -153,14 +181,14 @@ html { scroll-behavior: smooth; }
   height: 2.25rem;
   border-radius: 0.5rem;
   color: var(--footer-text-muted);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: var(--footer-surface);
+  border: 1px solid var(--footer-surface-border);
   transition: color 200ms, background 200ms, border-color 200ms, transform 200ms;
 }
 .footer-social:hover {
-  color: #fff;
-  background: rgba(192,0,26,0.15);
-  border-color: rgba(192,0,26,0.60);
+  color: var(--footer-text);
+  background: var(--footer-surface-hover);
+  border-color: var(--footer-surface-border-hover);
   transform: translateY(-2px);
 }
 
@@ -219,6 +247,10 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes marquee-horizontal {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 @keyframes orbit {
   from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
   to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
@@ -263,4 +295,20 @@ body {
 .reveal-left.visible { opacity: 1; transform: translateX(0); }
 .reveal-right        { opacity: 0; transform: translateX(32px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-horizontal 34s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
 

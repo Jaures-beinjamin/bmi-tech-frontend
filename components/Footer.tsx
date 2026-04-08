@@ -72,19 +72,24 @@ export default function Footer() {
 
           {/* ── Colonne Brand ── */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6 rounded-lg bg-white px-3 py-2">
+            <Link href="/" className="inline-block mb-6">
               <Image
                 src="/img/logo-bmi.png"
                 alt="BMI Technologies"
-                width={120}
-                height={40}
-                className="h-10 w-auto object-contain"
-                style={{ width: "auto", height: "2.5rem" }}
+                width={220}
+                height={64}
+                className="h-14 w-auto object-contain"
+                style={{ width: "auto", height: "3.5rem" }}
               />
             </Link>
-            <p className="text-sm text-[var(--footer-text-muted)] leading-relaxed mb-6">
-              Startup suisse innovante spécialisée en robotique et intelligence
-              artificielle. Raison individuelle sise à Baulmes, Canton de Vaud.
+            <p className="text-sm text-[var(--footer-text-muted)] leading-relaxed mb-4">
+              Entreprise suisse de services informatiques spécialisée dans le
+              développement logiciel, le matériel intelligent et les solutions
+              personnalisées.
+            </p>
+            <p className="text-xs text-[var(--footer-text-dim)] leading-relaxed mb-6">
+              Entité indépendante basée à Baulmes, Vaud, sans lien avec BMI Group
+              ni avec d&apos;autres groupes internationaux de nom similaire.
             </p>
 
             {/* Réseaux sociaux */}
@@ -146,9 +151,9 @@ export default function Footer() {
               Contact
             </h3>
             <address className="not-italic space-y-2.5 text-sm text-[var(--footer-text-muted)]">
-              <p className="font-medium text-[var(--footer-text)]">Roland Burgermeister</p>
+              <p className="font-medium text-[var(--footer-text)]">BMI Technologies</p>
               <p>1446 Baulmes, VD</p>
-              <p>Suisse</p>
+              <p>Baulmes, Vaud — Suisse</p>
               <a
                 href="mailto:contact@bmi-tech.ch"
                 className="block transition-colors hover:text-[var(--footer-text)]"
@@ -162,9 +167,9 @@ export default function Footer() {
             <div
               className="mt-6 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold"
               style={{
-                background: "rgba(192,0,26,0.12)",
-                border: "1px solid rgba(192,0,26,0.25)",
-                color: "#FCA5A5",
+                background: "var(--footer-surface)",
+                border: "1px solid var(--footer-surface-border)",
+                color: "var(--footer-link)",
               }}
             >
               <svg viewBox="0 0 20 20" fill="currentColor" width={14} height={14} aria-hidden>
@@ -178,7 +183,7 @@ export default function Footer() {
         {/* ── Barre de bas de page ── */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[var(--footer-border)] pt-8 sm:flex-row">
           <p className="text-xs text-[var(--footer-text-dim)]">
-            &copy; {year} BMI Technologies — Roland Burgermeister. Tous droits réservés.
+            &copy; {year} BMI Technologies. Tous droits réservés.
           </p>
           <div className="flex items-center gap-1 text-xs text-[var(--footer-text-dim)]">
             <span>Conçu &amp; développé en</span>

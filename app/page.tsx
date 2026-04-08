@@ -8,7 +8,7 @@ import AboutSection from "@/components/AboutSection";
 export const metadata: Metadata = {
   title: "Accueil",
   description:
-    "BMI Technologies Roland Burgermeister, startup suisse spécialisée en robotique. Découvrez notre robot joueur d'échecs inspiré du Turc mécanique.",
+    "BMI Technologies est une entreprise suisse de services informatiques spécialisée dans le développement logiciel, le matériel intelligent et les solutions personnalisées. Le Turc y sert de projet vitrine.",
 };
 
 export default function HomePage() {

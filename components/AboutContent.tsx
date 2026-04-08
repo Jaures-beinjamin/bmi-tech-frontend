@@ -26,7 +26,7 @@ const fiche = [
   { label: "Forme juridique", value: "Raison individuelle" },
   { label: "Fondateur",       value: "Roland Burgermeister" },
   { label: "Siège",           value: "Baulmes, 1446 VD, Suisse" },
-  { label: "Domaines",        value: "Informatique · Robotique · IA" },
+  { label: "Domaines",        value: "Services informatiques · Matériel · IA" },
   { label: "Langue",          value: "Français" },
   { label: "E-mail",          value: "contact@bmi-tech.ch" },
 ];
@@ -56,7 +56,7 @@ const timeline = [
   { year: "Passion", text: "Débuts avec l'électronique et les échecs — deux univers qui fusionnent.", dot: "blue" },
   { year: "R&D",     text: "Prototypage du bras robotique, intégration de la vision par ordinateur.", dot: "red" },
   { year: "2024",    text: "Création officielle de BMI Technologies à Baulmes, canton de Vaud.", dot: "blue" },
-  { year: "Futur",   text: "Démonstrations, partenariats et déploiement du robot joueur d'échecs.", dot: "red" },
+  { year: "Futur",   text: "Collaborations techniques, nouveaux prototypes et déploiement de solutions intelligentes.", dot: "red" },
 ];
 
 export default function AboutContent() {
@@ -93,7 +93,7 @@ export default function AboutContent() {
                 className="inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] mb-6 animate-fade-in"
                 style={{ background: "var(--brand-section-badge-bg)", color: "var(--brand-section-badge-color)", border: "1px solid var(--brand-section-badge-border)" }}
               >
-                Notre histoire
+                Entreprise suisse indépendante
               </span>
 
               <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-up delay-100" style={{ color: "var(--brand-section-text)" }}>
@@ -109,7 +109,10 @@ export default function AboutContent() {
               </h1>
 
               <p className="text-lg leading-relaxed mb-8 animate-fade-up delay-200 max-w-lg" style={{ color: "var(--brand-section-secondary)" }}>
-                Une startup suisse née à la croisée des échecs, de la robotique et de l&apos;intelligence artificielle. Basée à Baulmes, VD — construite pour l&apos;excellence.
+                BMI Technologies est une entreprise de services informatiques
+                basée à Baulmes, spécialisée dans le développement logiciel, le
+                matériel intelligent et les solutions sur mesure. Elle agit sans
+                lien avec BMI Group ni avec d&apos;autres groupes homonymes.
               </p>
 
               <div className="flex flex-wrap gap-3 animate-fade-up delay-300">
@@ -222,19 +225,21 @@ export default function AboutContent() {
                 Notre mission
               </span>
               <h2 className="text-4xl font-black text-[var(--foreground)] mb-6 leading-tight">
-                Repousser les frontières de la{" "}
-                <span style={{ color: "var(--brand-blue)" }}>robotique</span>{" "}
-                appliquée
+                Concevoir des solutions{" "}
+                <span style={{ color: "var(--brand-blue)" }}>intelligentes</span>{" "}
+                sur mesure
               </h2>
               <p className="text-[var(--secondary)] leading-relaxed mb-4">
                 <strong style={{ color: "var(--foreground)" }}>BMI Technologies</strong> est
-                une raison individuelle suisse qui développe des solutions innovantes à la croisée
-                du <strong style={{ color: "var(--brand-blue)" }}>logiciel</strong>,
-                de l&apos;<strong style={{ color: "var(--brand-red)" }}>électronique embarquée</strong> et
-                de la vision artificielle.
+                une raison individuelle suisse qui conçoit des solutions à la
+                croisée du <strong style={{ color: "var(--brand-blue)" }}>logiciel</strong>,
+                du <strong style={{ color: "var(--brand-red)" }}>matériel</strong>,
+                de l&apos;électronique embarquée et des systèmes intelligents.
               </p>
               <p className="text-[var(--secondary)] leading-relaxed mb-6">
-                Son projet phare — le robot joueur d&apos;échecs <strong style={{ color: "var(--foreground)" }}>«&nbsp;Le Turc&nbsp;»</strong> — incarne cette philosophie : allier technologie avancée et culture pour créer quelque chose d&apos;extraordinaire.
+                Son projet phare — <strong style={{ color: "var(--foreground)" }}>«&nbsp;Le Turc&nbsp;»</strong> —
+                sert de démonstrateur en réunissant robotique, vision par
+                ordinateur et logiciel dans une réalisation concrète.
               </p>
               <blockquote
                 className="pl-5 py-3 italic text-[var(--foreground)] text-base font-medium rounded-r-xl"
@@ -243,7 +248,7 @@ export default function AboutContent() {
                   background: "var(--brand-red-light)",
                 }}
               >
-                «&nbsp;Aussi passionné d&apos;échecs qu&apos;il est mordu d&apos;électronique et d&apos;informatique.&nbsp;»
+                «&nbsp;Du logiciel au matériel, chaque solution doit répondre à un besoin réel.&nbsp;»
               </blockquote>
             </div>
 
@@ -530,7 +535,9 @@ export default function AboutContent() {
             </span>
           </h2>
           <p className="text-lg mb-10 leading-relaxed" style={{ color: "var(--brand-section-secondary)" }}>
-            Partenariats, investissements, démonstrations ou simplement une belle conversation — Roland est à votre écoute.
+            Développement logiciel, matériel, démonstration technologique ou
+            collaboration sur mesure — BMI Technologies vous répond depuis
+            Baulmes.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

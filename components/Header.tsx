@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { NavigationRegular, DismissRegular, WeatherSunnyRegular, WeatherMoonRegular } from "@fluentui/react-icons";
 import Image from "next/image";
@@ -16,11 +16,13 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
+  const isClient = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   return (
     <header
@@ -30,17 +32,15 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center no-underline">
-          <div className="rounded-lg px-2 py-1.5">
-            <Image
-              src="/img/logo-bmi.png"
-              alt="BMI Technologies"
-              width={96}
-              height={32}
-              className="h-8 w-auto object-contain"
-              style={{ width: "auto", height: "2rem" }}
-              priority
-            />
-          </div>
+          <Image
+            src="/img/logo-bmi.png"
+            alt="BMI Technologies"
+            width={184}
+            height={56}
+            className="h-11 w-auto object-contain lg:h-12"
+            style={{ width: "auto", height: "3rem" }}
+            priority
+          />
         </Link>
 
         {/* Desktop navigation */}
@@ -73,7 +73,7 @@ export default function Header() {
             className="p-2 rounded-lg hover:bg-[var(--surface-2)] transition-colors text-[var(--secondary)]"
             aria-label="Basculer le thème"
           >
-            {mounted && theme === "dark" ? (
+            {isClient && theme === "dark" ? (
               <WeatherSunnyRegular fontSize={20} />
             ) : (
               <WeatherMoonRegular fontSize={20} />
@@ -95,7 +95,7 @@ export default function Header() {
             className="p-2 rounded-lg hover:bg-[var(--surface-2)] transition-colors text-[var(--secondary)]"
             aria-label="Basculer le thème"
           >
-            {mounted && theme === "dark" ? (
+            {isClient && theme === "dark" ? (
               <WeatherSunnyRegular fontSize={20} />
             ) : (
               <WeatherMoonRegular fontSize={20} />

@@ -1,174 +1,113 @@
 "use client";
 
 import { useReveal } from "@/hooks/useReveal";
-import ContactForm from "@/components/ContactForm";
 
-const infos = [
-  { icon: "🏢", label: "Entreprise",  value: "BMI Technologies" },
-  { icon: "👤", label: "Contact",     value: "Roland Burgermeister" },
-  { icon: "📍", label: "Adresse",     value: "1446 Baulmes, VD — Suisse" },
-  { icon: "✉️", label: "E-mail",      value: "contact@bmi-tech.ch", isEmail: true },
-];
-
-const raisons = [
-  { emoji: "🤝", title: "Partenariat",    text: "Collaborez sur le projet Le Turc ou d'autres innovations." },
-  { emoji: "📈", title: "Investissement", text: "Participez au développement de la startup suisse." },
-  { emoji: "🎬", title: "Démonstration",  text: "Organisez une démo live du robot joueur d'échecs." },
+const contactItems = [
+  { label: "Entreprise", value: "BMI Technologies" },
+  { label: "Activités", value: "Développement logiciel, matériel et solutions intelligentes sur mesure" },
+  { label: "Localisation", value: "Baulmes, Vaud — Suisse" },
 ];
 
 export default function ContactContent() {
-  const heroRef   = useReveal(0.1);
-  const mainRef   = useReveal(0.1);
-  const formRef   = useReveal(0.1);
+  const heroRef = useReveal(0.1);
+  const infoRef = useReveal(0.1);
 
   return (
     <div className="min-h-screen bg-[var(--surface-1)]">
-
-      {/* ── Hero ── */}
-      <div
-        ref={heroRef as React.RefObject<HTMLDivElement>}
-        className="relative overflow-hidden bg-[var(--surface-0)] border-b border-[var(--border-subtle)]"
+      <section
+        ref={heroRef as React.RefObject<HTMLElement>}
+        className="relative overflow-hidden px-6 py-24"
+        style={{ background: "var(--brand-section-bg)" }}
       >
-        {/* Orbe décoratif */}
         <div
-          className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-20 blur-3xl"
-          style={{ background: "var(--brand-blue)" }}
+          className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full blur-3xl"
+          style={{ background: "var(--brand-blue)", opacity: "var(--brand-section-orb-opacity)" }}
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-16 -left-16 w-64 h-64 rounded-full opacity-10 blur-3xl"
-          style={{ background: "var(--brand-red)" }}
+          className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full blur-3xl"
+          style={{ background: "var(--brand-red)", opacity: "var(--brand-section-orb-opacity)" }}
           aria-hidden
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-20">
+
+        <div className="relative mx-auto max-w-4xl text-center">
           <span
-            className="animate-fade-in inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-5"
-            style={{ background: "var(--brand-blue-light)", color: "var(--brand-blue)" }}
+            className="animate-fade-in inline-flex rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6"
+            style={{
+              background: "var(--brand-section-badge-bg)",
+              color: "var(--brand-section-badge-color)",
+              border: "1px solid var(--brand-section-badge-border)",
+            }}
           >
-            Parlons-nous
+            Contact
           </span>
-          <h1 className="animate-fade-up delay-100 text-5xl font-bold text-[var(--foreground)] mb-4 leading-tight">
-            Contactez-nous
+          <h1 className="animate-fade-up delay-100 text-5xl font-black mb-5 leading-tight" style={{ color: "var(--brand-section-text)" }}>
+            Contactez BMI Technologies
           </h1>
-          <p className="animate-fade-up delay-200 text-xl text-[var(--secondary)] max-w-2xl leading-relaxed">
-            Partenariats, investissements, démonstrations ou simplement une
-            question — Roland Burgermeister est à votre écoute.
+          <p className="animate-fade-up delay-200 text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--brand-section-secondary)" }}>
+            Pour un besoin en développement logiciel, matériel ou solution
+            intelligente sur mesure, écrivez-nous directement par e-mail.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* ── Raisons de contact ── */}
-      <div
-        ref={mainRef as React.RefObject<HTMLDivElement>}
-        className="mx-auto max-w-6xl px-6 pt-12 pb-0"
-      >
-        <div className="grid gap-4 sm:grid-cols-3">
-          {raisons.map((r, i) => (
-            <div
-              key={r.title}
-              className={`reveal ${i === 0 ? "delay-100" : i === 1 ? "delay-200" : "delay-300"} flex gap-4 items-start rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1`}
-              style={{
-                background: "var(--surface-0)",
-                border: "1px solid var(--border-subtle)",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-              }}
-            >
-              <span className="text-2xl shrink-0">{r.emoji}</span>
-              <div>
-                <div className="font-bold text-sm text-[var(--foreground)] mb-1">{r.title}</div>
-                <div className="text-xs text-[var(--secondary)] leading-relaxed">{r.text}</div>
-              </div>
+      <section ref={infoRef as React.RefObject<HTMLElement>} className="mx-auto max-w-5xl px-6 py-14">
+        <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
+          <div
+            className="reveal rounded-3xl p-8 lg:p-10"
+            style={{
+              background: "var(--surface-0)",
+              border: "1px solid var(--border-subtle)",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.05)",
+            }}
+          >
+            <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "var(--brand-blue)" }}>
+              E-mail direct
             </div>
-          ))}
-        </div>
-      </div>
+            <a
+              href="mailto:contact@bmi-tech.ch"
+              className="block text-3xl lg:text-4xl font-black leading-tight hover:underline"
+              style={{ color: "var(--brand-blue)" }}
+            >
+              contact@bmi-tech.ch
+            </a>
+            <p className="mt-5 text-base leading-relaxed" style={{ color: "var(--secondary)" }}>
+              Contact principal pour les demandes de développement logiciel,
+              de matériel intelligent, de prototypes et de démonstrations
+              techniques.
+            </p>
 
-      {/* ── Formulaire + infos ── */}
-      <div ref={formRef as React.RefObject<HTMLDivElement>} className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 lg:grid-cols-5">
-
-          {/* Formulaire */}
-          <div className="reveal delay-100 lg:col-span-3">
             <div
-              className="rounded-2xl p-8"
+              className="mt-8 inline-flex rounded-full px-4 py-2 text-sm font-semibold"
               style={{
-                background: "var(--surface-0)",
+                background: "var(--brand-blue-light)",
+                color: "var(--brand-blue)",
                 border: "1px solid var(--border-subtle)",
               }}
             >
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
-                Envoyer un message
-              </h2>
-              <p className="text-sm text-[var(--secondary)] mb-6">
-                Réponse garantie sous 24 h ouvrées.
-              </p>
-              <ContactForm />
+              Baulmes, Vaud — Suisse
             </div>
           </div>
 
-          {/* Colonne infos */}
-          <div className="reveal delay-200 lg:col-span-2 space-y-5">
-
-            {/* Coordonnées */}
-            <div
-              className="rounded-2xl p-6"
-              style={{
-                background: "var(--surface-0)",
-                border: "1px solid var(--border-subtle)",
-              }}
-            >
-              <h3 className="font-bold text-[var(--foreground)] mb-5">Coordonnées</h3>
-              <div className="space-y-4">
-                {infos.map((item) => (
-                  <div key={item.label} className="flex gap-3 items-start">
-                    <span className="text-lg shrink-0 mt-0.5">{item.icon}</span>
-                    <div>
-                      <div className="text-xs text-[var(--secondary)] font-semibold uppercase tracking-wide mb-0.5">
-                        {item.label}
-                      </div>
-                      {item.isEmail ? (
-                        <a
-                          href={`mailto:${item.value}`}
-                          className="text-sm font-medium hover:underline"
-                          style={{ color: "var(--brand-blue)" }}
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <div className="text-sm font-medium text-[var(--foreground)]">{item.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Projet */}
-            <div
-              className="rounded-2xl p-6 relative overflow-hidden"
-              style={{
-                background: "linear-gradient(135deg, var(--brand-blue-light) 0%, var(--surface-0) 100%)",
-                border: "1px solid var(--border-subtle)",
-              }}
-            >
-              <div className="text-4xl mb-3 animate-float">♟️</div>
-              <h3 className="font-bold text-[var(--foreground)] mb-2">
-                Le projet vous intéresse ?
-              </h3>
-              <p className="text-sm text-[var(--secondary)] leading-relaxed">
-                Roland est ouvert aux collaborations et démonstrations de son
-                robot joueur d&apos;échecs autonome «&nbsp;Le Turc&nbsp;».
-              </p>
-              <a
-                href="/projets/turc"
-                className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold transition-all duration-200 hover:gap-3"
-                style={{ color: "var(--brand-blue)" }}
+          <div className="reveal delay-200 space-y-4">
+            {contactItems.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl p-6"
+                style={{
+                  background: "var(--surface-0)",
+                  border: "1px solid var(--border-subtle)",
+                }}
               >
-                Voir le projet →
-              </a>
-            </div>
+                <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--brand-red)" }}>
+                  {item.label}
+                </div>
+                <div className="text-sm leading-relaxed font-medium" style={{ color: "var(--foreground)" }}>
+                  {item.value}
+                </div>
+              </div>
+            ))}
 
-            {/* Réseaux */}
             <div
               className="rounded-2xl p-6"
               style={{
@@ -176,29 +115,18 @@ export default function ContactContent() {
                 border: "1px solid var(--border-subtle)",
               }}
             >
-              <h3 className="font-bold text-[var(--foreground)] mb-4">Réseaux sociaux</h3>
-              <div className="flex gap-3">
-                {[
-                  { href: "https://linkedin.com", label: "LinkedIn", bg: "#0A66C2" },
-                  { href: "https://twitter.com",  label: "Twitter / X", bg: "#000" },
-                ].map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:opacity-85 hover:-translate-y-0.5"
-                    style={{ background: social.bg }}
-                  >
-                    {social.label}
-                  </a>
-                ))}
+              <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "var(--brand-red)" }}>
+                Information
               </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--secondary)" }}>
+                BMI Technologies est une entité suisse indépendante, sans lien
+                avec BMI Group ni avec d&apos;autres groupes internationaux de nom
+                similaire.
+              </p>
             </div>
-
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

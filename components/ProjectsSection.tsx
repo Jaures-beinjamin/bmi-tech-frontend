@@ -39,14 +39,14 @@ export default function ProjectsSection() {
             className="inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-4"
             style={{ background: "var(--brand-red-light)", color: "var(--brand-red)" }}
           >
-            Portfolio
+            Projet vitrine
           </span>
           <h2 className="text-4xl font-bold text-[var(--foreground)] mb-5">
-            Nos projets
+            Le savoir-faire en démonstration
           </h2>
           <p className="text-xl text-[var(--secondary)] max-w-xl mx-auto leading-relaxed">
-            Des innovations concrètes au croisement de la robotique, de
-            l&apos;intelligence artificielle et du patrimoine culturel.
+            Le Turc illustre la capacité de BMI Technologies à réunir logiciel,
+            électronique, vision et mécatronique dans une solution cohérente.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
               background: "var(--brand-blue-light)",
             }}
           >
-            Voir tous les projets →
+            Explorer le projet Le Turc →
           </a>
         </div>
       </div>

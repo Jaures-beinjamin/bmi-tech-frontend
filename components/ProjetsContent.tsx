@@ -1,10 +1,14 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
-import { ArrowRightRegular } from "@fluentui/react-icons";
 import { useReveal } from "@/hooks/useReveal";
 import ProjectCard from "@/components/ProjectCard";
+import {
+  ChessMachineIllustration,
+  RoboticArmIllustration,
+  VisionEngineIllustration,
+  WebInterfaceIllustration,
+} from "@/components/ProjectIllustrations";
 
 const featured = {
   title: "Le Turc – Robot joueur d'échecs",
@@ -12,7 +16,6 @@ const featured = {
     "Le projet phare de BMI Technologies : un automate robotique inspiré du légendaire Turc mécanique de Wolfgang von Kempelen (1769). Capable de voir les pièces sur l'échiquier via vision par ordinateur, de calculer le coup optimal avec Stockfish et de les déplacer physiquement grâce à un bras articulé à 6 degrés de liberté.",
   badges: ["Robotique", "Vision par ordinateur", "Mécatronique", "Stockfish IA", "Arduino / RPi"],
   href: "/projets/turc",
-  emoji: "♟️",
 };
 
 const otherProjects = [
@@ -22,7 +25,7 @@ const otherProjects = [
       "Application web temps réel permettant de jouer contre le robot à distance, visualiser l'échiquier en direct et analyser les parties coup par coup.",
     badges: ["Next.js", "WebSockets", "ASP.NET Core"],
     href: "/projets/turc",
-    emoji: "🌐",
+    illustration: <WebInterfaceIllustration className="h-full w-full max-w-[180px]" />,
   },
   {
     title: "Moteur de vision",
@@ -30,7 +33,7 @@ const otherProjects = [
       "Pipeline de traitement d'image basé sur OpenCV pour la détection et la localisation des pièces d'échecs en temps réel avec une précision sub-centimétrique.",
     badges: ["OpenCV", "Python", "Computer Vision"],
     href: "/projets/turc",
-    emoji: "👁️",
+    illustration: <VisionEngineIllustration className="h-full w-full max-w-[180px]" />,
   },
   {
     title: "Contrôle du bras robotique",
@@ -38,7 +41,7 @@ const otherProjects = [
       "Firmware embarqué pour le contrôle d'un bras articulé 6 DDL : planification de trajectoires, gestion des collisions et interface de commande haut-niveau.",
     badges: ["C++", "Embarqué", "Cinématique"],
     href: "/projets/turc",
-    emoji: "🦾",
+    illustration: <RoboticArmIllustration className="h-full w-full max-w-[180px]" />,
   },
 ];
 
@@ -97,15 +100,13 @@ export default function ProjetsContent() {
             >
               Nos projets
             </h1>
-            <p
-              className="text-xl leading-relaxed max-w-2xl"
-              style={{ color: "var(--brand-section-secondary)" }}
-            >
-              Des innovations concrètes à la croisée de la robotique, de
-              l&apos;intelligence artificielle et de l&apos;électronique.
-              Chaque projet naît d&apos;une seule passion : repousser les limites
-              du possible.
-            </p>
+            <div className="prose brand-prose prose-lg max-w-2xl">
+              <p>
+                Des innovations concrètes à la croisée de la robotique, de
+                l&apos;intelligence artificielle et de l&apos;électronique. Chaque
+                projet naît d&apos;une seule passion : repousser les limites du possible.
+              </p>
+            </div>
           </div>
 
           {/* Stats */}
@@ -180,9 +181,7 @@ export default function ProjetsContent() {
                   minHeight: "280px",
                 }}
               >
-                <span className="text-[120px] select-none transition-transform duration-500 group-hover:scale-110 leading-none">
-                  ♟️
-                </span>
+                <ChessMachineIllustration className="h-full w-full max-w-[240px] text-[var(--brand-blue)] transition-transform duration-500 group-hover:scale-105" />
               </div>
 
               {/* Contenu */}
@@ -202,12 +201,9 @@ export default function ProjetsContent() {
                 >
                   {featured.title}
                 </h2>
-                <p
-                  className="text-base leading-relaxed mb-7"
-                  style={{ color: "var(--secondary)" }}
-                >
-                  {featured.description}
-                </p>
+                <div className="prose brand-prose max-w-none mb-7">
+                  <p>{featured.description}</p>
+                </div>
 
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2 mb-8">
@@ -230,10 +226,15 @@ export default function ProjetsContent() {
                   style={{ background: "var(--brand-blue)" }}
                 >
                   Découvrir le projet
-                  <ArrowRightRegular
-                    fontSize={16}
-                    className="transition-transform duration-200 group-hover:translate-x-1"
-                  />
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    <path d="M4.167 10h11.666" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="m10.833 5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -317,7 +318,10 @@ export default function ProjetsContent() {
                 style={{ background: "var(--brand-blue)" }}
               >
                 Nous contacter
-                <ArrowRightRegular fontSize={16} />
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
+                  <path d="M4.167 10h11.666" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="m10.833 5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </Link>
               <Link
                 href="/a-propos"

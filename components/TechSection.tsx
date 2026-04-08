@@ -10,34 +10,34 @@ import {
 
 const features = [
   {
-    Icon: EyeRegular,
-    title: "Vision artificielle",
+    Icon: CodeRegular,
+    title: "Développement logiciel",
     description:
-      "Reconnaissance des pièces sur l'échiquier en temps réel grâce à la vision par ordinateur.",
+      "Applications métier, APIs, interfaces web et outils sur mesure adaptés à vos processus.",
     color: "var(--brand-blue)",
     bg: "var(--brand-blue-light)",
   },
   {
-    Icon: BotRegular,
-    title: "Mécanique fine",
+    Icon: SettingsRegular,
+    title: "Systèmes embarqués",
     description:
-      "Bras robotique ultra-précis capable de reproduire les gestes humains sur l'échiquier.",
+      "Électronique, automatisation, contrôle et intégration matériel/logiciel pour prototypes et produits.",
     color: "var(--brand-red)",
     bg: "var(--brand-red-light)",
   },
   {
-    Icon: CodeRegular,
-    title: "Programmation avancée",
+    Icon: EyeRegular,
+    title: "Vision & IA",
     description:
-      "Moteur d'échecs intégré, prise de décision autonome et apprentissage continu.",
+      "Computer vision, traitement de données et fonctions intelligentes quand elles apportent un gain réel.",
     color: "var(--brand-green)",
     bg: "var(--brand-green-light)",
   },
   {
-    Icon: SettingsRegular,
-    title: "Mécatronique",
+    Icon: BotRegular,
+    title: "Ingénierie sur mesure",
     description:
-      "Alliance de l'électronique embarquée, des capteurs et du contrôle moteur de précision.",
+      "Conception de solutions personnalisées, du prototype fonctionnel à l'intégration terrain.",
     color: "var(--brand-amber)",
     bg: "var(--brand-amber-light)",
   },
@@ -71,15 +71,15 @@ export default function TechSection() {
             className="inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-4"
             style={{ background: "var(--brand-blue-light)", color: "var(--brand-blue)" }}
           >
-            Stack technique
+            Expertises
           </span>
           <h2 className="text-4xl font-bold text-[var(--foreground)] mb-5">
-            Technologies clés
+            Ce que nous développons
           </h2>
           <p className="text-xl text-[var(--secondary)] max-w-2xl mx-auto leading-relaxed">
-            BMI Technologies combine les disciplines les plus avancées de
-            l&apos;ingénierie moderne pour donner vie à un automate joueur
-            d&apos;échecs.
+            BMI Technologies combine logiciel, matériel et intelligence
+            appliquée pour créer des solutions personnalisées utiles,
+            robustes et évolutives.
           </p>
         </div>
 

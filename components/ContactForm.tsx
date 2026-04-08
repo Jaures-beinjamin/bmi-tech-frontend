@@ -85,7 +85,7 @@ export default function ContactForm() {
             required
             value={form.nom}
             onChange={set("nom")}
-            placeholder="Roland Burgermeister"
+            placeholder="Votre nom"
             className={inputBase}
           />
         </div>

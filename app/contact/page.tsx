@@ -4,7 +4,7 @@ import ContactContent from "@/components/ContactContent";
 export const metadata: Metadata = {
   title: "Contact – BMI Technologies",
   description:
-    "Contactez BMI Technologies Roland Burgermeister pour des partenariats, démonstrations ou toute question relative au robot joueur d'échecs Le Turc.",
+    "Contact e-mail de BMI Technologies pour vos besoins en développement logiciel, matériel et solutions intelligentes sur mesure depuis Baulmes, Suisse.",
 };
 
 export default function ContactPage() {

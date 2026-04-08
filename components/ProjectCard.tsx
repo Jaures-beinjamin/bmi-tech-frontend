@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowRightRegular } from "@fluentui/react-icons";
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -11,6 +11,7 @@ interface ProjectCardProps {
   href: string;
   imageSrc?: string;
   imageAlt?: string;
+  illustration?: ReactNode;
   emoji?: string;
 }
 
@@ -21,6 +22,7 @@ export default function ProjectCard({
   href,
   imageSrc,
   imageAlt,
+  illustration,
   emoji = "♟️",
 }: ProjectCardProps) {
   return (
@@ -56,6 +58,10 @@ export default function ProjectCard({
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+          ) : illustration ? (
+            <div className="flex h-full w-full items-center justify-center p-6 text-[var(--brand-blue)] transition-transform duration-500 group-hover:scale-105">
+              {illustration}
+            </div>
           ) : (
             <div className="flex h-full w-full items-center justify-center text-7xl select-none transition-transform duration-500 group-hover:scale-110">
               {emoji}
@@ -100,10 +106,15 @@ export default function ProjectCard({
             style={{ color: "var(--brand-blue)" }}
           >
             Voir le projet
-            <ArrowRightRegular
-              fontSize={16}
-              className="transition-transform duration-200 group-hover:translate-x-1"
-            />
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+            >
+              <path d="M4.167 10h11.666" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              <path d="m10.833 5 5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
         </div>
       </div>
