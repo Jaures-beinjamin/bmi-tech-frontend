@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+/* Tailwind v4 : dark mode basé sur la classe .dark sur <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ──────────────────────────────────────────────
+   Variables de thème BMI Technologies
+   Palette : Bleu Google #1A73E8 + Rouge #EA4335
+   Fond clair professionnel
+─────────────────────────────────────────────── */
+:root {
+  --background:   #F8F8FA;
+  --foreground:   #18181B;
+  --secondary:    #52525B;
+
+  /* PRIMARY = Rouge suisse profond */
+  --brand-blue:       #C0001A;
+  --brand-blue-dark:  #920014;
+  --brand-blue-light: #FDE8EC;
+
+  /* SECONDAIRE = Bleu marine */
+  --brand-red:        #1A3A8F;
+  --brand-red-light:  #E8EEF9;
+
+  /* Surfaces */
+  --surface-0: #FFFFFF;
+  --surface-1: #F8F8FA;
+  --surface-2: #F0F0F3;
+  --surface-3: #E4E4E8;
+
+  /* Bordures */
+  --border-subtle:  rgba(0,0,0,0.07);
+  --border-default: rgba(0,0,0,0.12);
+
+  /* Couleurs tech */
+  --brand-green:       #047857;
+  --brand-green-light: #ECFDF5;
+  --brand-amber:       #B45309;
+  --brand-amber-light: #FEF3C7;
+
+  /* Header vitré */
+  --header-bg: rgba(248,248,250,0.92);
+
+  /* Ombres premium */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.09);
+  --shadow-primary: 0 8px 32px rgba(192,0,26,0.24);
+  --shadow-accent:  0 8px 32px rgba(26,58,143,0.18);
+
+  /* Footer — toujours sombre */
+  --footer-bg:         #18181B;
+  --footer-text:       #F4F4F5;
+  --footer-text-muted: rgba(255,255,255,0.60);
+  --footer-text-dim:   rgba(255,255,255,0.35);
+  --footer-border:     rgba(255,255,255,0.08);
+  --footer-link:       #FCA5A5;
+
+  /* Sections brand hero/CTA — réactives au thème */
+  --brand-section-bg: linear-gradient(135deg, #FAF0F2 0%, #FFFFFF 50%, #EEF2FA 100%);
+  --brand-section-text: #18181B;
+  --brand-section-secondary: #52525B;
+  --brand-section-badge-bg: rgba(192,0,26,0.08);
+  --brand-section-badge-color: #920014;
+  --brand-section-badge-border: rgba(192,0,26,0.22);
+  --brand-section-ghost-bg: rgba(192,0,26,0.06);
+  --brand-section-ghost-color: #18181B;
+  --brand-section-ghost-border: rgba(0,0,0,0.14);
+  --brand-section-orb-opacity: 0.07;
+  --brand-section-circle-border: rgba(0,0,0,0.09);
+}
+
+/* ── Mode sombre ── */
+html.dark {
+  --background:   #0F0F1A;
+  --foreground:   #E8EAED;
+  --secondary:    #9AA0A6;
+
+  /* PRIMARY = Rouge éclairci pour fond sombre */
+  --brand-blue:       #E84B4B;
+  --brand-blue-dark:  #FF7070;
+  --brand-blue-light: #3C0810;
+
+  /* SECONDAIRE = Bleu éclairci pour fond sombre */
+  --brand-red:        #5B87F5;
+  --brand-red-light:  #1A2A50;
+
+  --surface-0: #1E1E2E;
+  --surface-1: #252535;
+  --surface-2: #2E2E40;
+  --surface-3: #3A3A4E;
+
+  --border-subtle:  rgba(255,255,255,0.08);
+  --border-default: rgba(255,255,255,0.14);
+
+  /* Couleurs tech dark */
+  --brand-green:       #4CAF7D;
+  --brand-green-light: #1A3A25;
+  --brand-amber:       #FFAB40;
+  --brand-amber-light: #3A2800;
+
+  --header-bg: rgba(15,15,26,0.92);
+
+  /* Sections brand hero/CTA — mode sombre */
+  --brand-section-bg: linear-gradient(135deg, #0D0006 0%, #140008 45%, #08080F 100%);
+  --brand-section-text: #FFFFFF;
+  --brand-section-secondary: rgba(255,255,255,0.70);
+  --brand-section-badge-bg: rgba(192,0,26,0.18);
+  --brand-section-badge-color: #FCA5A5;
+  --brand-section-badge-border: rgba(192,0,26,0.35);
+  --brand-section-ghost-bg: rgba(255,255,255,0.08);
+  --brand-section-ghost-color: #FFFFFF;
+  --brand-section-ghost-border: rgba(255,255,255,0.18);
+  --brand-section-orb-opacity: 0.25;
+  --brand-section-circle-border: rgba(255,255,255,0.12);
+
+  /* Footer — mode sombre */
+  --footer-bg:         #0A0A14;
+  --footer-text:       #E8EAED;
+  --footer-text-muted: rgba(255,255,255,0.60);
+  --footer-text-dim:   rgba(255,255,255,0.30);
+  --footer-border:     rgba(255,255,255,0.08);
+  --footer-link:       #FCA5A5;
+}
+
+/* Tailwind v4 inline theme tokens */
+@theme inline {
+  --color-background:    var(--background);
+  --color-foreground:    var(--foreground);
+  --color-secondary:     var(--secondary);
+  --color-brand:         var(--brand-blue);
+  --color-brand-dark:    var(--brand-blue-dark);
+  --color-brand-light:   var(--brand-blue-light);
+  --color-accent:        var(--brand-red);
+  --color-accent-light:  var(--brand-red-light);
+  --color-surface-0:     var(--surface-0);
+  --color-surface-1:     var(--surface-1);
+  --color-surface-2:     var(--surface-2);
+  --color-surface-3:     var(--surface-3);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-geist-mono);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* Icônes réseaux sociaux footer — hover CSS pur (Server Component) */
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  color: var(--footer-text-muted);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: color 200ms, background 200ms, border-color 200ms, transform 200ms;
+}
+.footer-social:hover {
+  color: #fff;
+  background: rgba(192,0,26,0.15);
+  border-color: rgba(192,0,26,0.60);
+  transform: translateY(-2px);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--brand-blue); color: #fff; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-blue-dark); }
+
+/* ──────────────────────────────────────────────
+   Keyframes & animations globales
+─────────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-1deg); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.70; }
+}
+@keyframes scan-down {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(200%); }
+}
+
+/* Utilitaires d'animation */
+.animate-fade-up     { animation: fade-up   0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-in     { animation: fade-in   0.6s ease both; }
+.animate-scale-in    { animation: scale-in  0.6s cubic-bezier(.22,1,.36,1) both; }
+.animate-slide-right { animation: slide-right 0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-slide-left  { animation: slide-left  0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-float       { animation: float 6s ease-in-out infinite; }
+.animate-pulse-ring  { animation: pulse-ring 2s ease-out infinite; }
+.animate-orbit       { animation: orbit 8s linear infinite; }
+
+/* Délais réutilisables */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Scroll reveal — injecté via IntersectionObserver */
+.reveal        { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left        { opacity: 0; transform: translateX(-32px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right        { opacity: 0; transform: translateX(32px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
